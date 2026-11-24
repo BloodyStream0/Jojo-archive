@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Une encyclopédie fan-made de JoJo's Bizarre Adventure.">
+  <title>JoJo Archive — Encyclopédie JJBA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#" aria-label="JoJo Archive, accueil">JOJO<span>ARCHIVE</span></a>
+    <nav>
+      <a href="#personnages">Personnages</a>
+      <a href="#parties">Les parties</a>
+      <a href="#quiz">Quiz</a>
+    </nav>
+    <button id="themeToggle" class="icon-button" type="button" aria-label="Changer le thème">☾</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">YARE YARE DAZE • FAN DATABASE</p>
+        <h1>WELCOME TO<br><span>THE JOJO</span><br>ARCHIVE.</h1>
+        <p class="hero-copy">Explore les générations Joestar, découvre les Stands et parcours les grandes sagas de JoJo's Bizarre Adventure.</p>
+        <a class="primary-button" href="#personnages">Explorer l'archive <span>↗</span></a>
+      </div>
+      <div class="hero-mark" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="star">★</div><div class="hero-word">ゴゴゴ</div>
+        <div class="hero-caption">THE<br>JOESTAR<br>LEGACY</div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Statistiques du site">
+      <div><strong id="characterCount">0</strong><span>FICHES PERSONNAGES</span></div>
+      <div><strong>9</strong><span>PARTIES PRINCIPALES</span></div>
+      <div><strong>∞</strong><span>POSSIBILITÉS</span></div>
+    </section>
+
+    <section class="section" id="personnages">
+      <div class="section-heading">
+        <div><p class="eyebrow">DATABASE / 001</p><h2>Les personnages</h2></div>
+        <p class="section-note">Recherche un personnage ou filtre les résultats par catégorie.</p>
+      </div>
+      <div class="filters">
+        <label class="search-box">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Rechercher un personnage..." autocomplete="off">
+        </label>
+        <div class="filter-buttons" id="filterButtons">
+          <button class="filter active" data-filter="Tous">Tous</button>
+          <button class="filter" data-filter="JoJo">JoJo</button>
+          <button class="filter" data-filter="Allié">Alliés</button>
+          <button class="filter" data-filter="Antagoniste">Antagonistes</button>
+        </div>
+      </div>
+      <div id="characterGrid" class="character-grid" aria-live="polite"></div>
+      <p id="emptyMessage" class="empty-message" hidden>Aucun personnage ne correspond à ta recherche.</p>
+    </section>
+
+    <section class="section parts-section" id="parties">
+      <div class="section-heading">
+        <div><p class="eyebrow">TIMELINE / 002</p><h2>Les grandes parties</h2></div>
+        <p class="section-note">Une aventure, plusieurs époques et générations.</p>
+      </div>
+      <div class="parts-grid" id="partsGrid"></div>
+    </section>
+
+    <section class="quiz-section" id="quiz">
+      <div>
+        <p class="eyebrow">TEST YOUR KNOWLEDGE / 003</p>
+        <h2>Es-tu incollable<br>sur JoJo ?</h2>
+        <p>Réponds à une question pour tester tes connaissances.</p>
+      </div>
+      <div class="quiz-card">
+        <p class="quiz-label">QUESTION DU MOMENT</p>
+        <h3 id="quizQuestion">Quel est le Stand de Jotaro Kujo ?</h3>
+        <div id="quizAnswers" class="quiz-answers"></div>
+        <p id="quizFeedback" class="quiz-feedback" aria-live="polite"></p>
+        <button id="nextQuestion" class="text-button" type="button">Question suivante →</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="#">JOJO<span>ARCHIVE</span></a>
+    <p>Projet personnel de NSI • Site fan-made non officiel.</p>
+    <p class="fine-print">JoJo's Bizarre Adventure et ses personnages appartiennent à leurs ayants droit. Ce site est un projet éducatif et non commercial.</p>
+  </footer>
+
+  <dialog id="characterDialog" class="character-dialog">
+    <button id="closeDialog" class="close-dialog" type="button" aria-label="Fermer">×</button>
+    <p class="eyebrow" id="dialogCategory"></p>
+    <h2 id="dialogName"></h2>
+    <p class="dialog-part" id="dialogPart"></p>
+    <div class="dialog-divider"></div>
+    <p id="dialogDescription"></p>
+    <div class="stand-box"><span>STAND</span><strong id="dialogStand"></strong></div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
